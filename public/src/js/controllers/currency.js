@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('insight.currency').controller('CurrencyController',
+angular.module('flosight.currency').controller('CurrencyController',
   function($scope, $rootScope, Currency) {
     $rootScope.currency.symbol = defaultCurrency;
 
@@ -41,7 +41,7 @@ angular.module('insight.currency').controller('CurrencyController',
 
     $scope.setCurrency = function(currency) {
       $rootScope.currency.symbol = currency;
-      localStorage.setItem('insight-currency', currency);
+      localStorage.setItem('flosight-currency', currency);
 
       if (currency === 'USD') {
         Currency.get({}, function(res) {

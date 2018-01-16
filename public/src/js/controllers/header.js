@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('insight.system').controller('HeaderController',
+angular.module('flosight.system').controller('HeaderController',
   function($scope, $rootScope, $modal, getSocket, Global, Block) {
     $scope.global = Global;
 

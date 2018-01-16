@@ -148,7 +148,7 @@ margin-left: 0;
   cursor: pointer;
 }
 
-.insight {
+.flosight {
   font-family: 'Ubuntu', sans-serif;
   font-size: 34px;
   font-style: italic;
@@ -396,17 +396,17 @@ margin-left: 0;
   overflow: hidden;
 }
 
-#footer a.insight {
+#footer a.flosight {
   font-size: 20px;
   text-decoration: none;
   color: #fff;
 }
 
-#footer a.insight:hover {
+#footer a.flosight:hover {
   color: #fffffe;
 }
 
-#footer a.insight small { font-size: 11px; }
+#footer a.flosight small { font-size: 11px; }
 .line-footer { border-top: 2px dashed #ccc; }
 
 #footer .links {
@@ -613,7 +613,7 @@ margin-left: 0;
   float: left;
   height: 45px;
 }
-#powered a.bitcore {
+#powered a.flocore {
   background-image: url('../img/logo.svg');
   background-size: 80px;
   width: 30%;
@@ -753,7 +753,7 @@ a.v_highlight_more {
   h3 {
     font-size: 18px;
   }
-  .insight {
+  .flosight {
     font-size: 30px;
   }
   .navbar-default .navbar-nav>li>a {
@@ -787,7 +787,7 @@ a.v_highlight_more {
   .navbar-default .navbar-brand {
     padding: 15px;
   }
-  .insight {
+  .flosight {
     font-size: 26px;
   }
   .navbar-nav>li>a {

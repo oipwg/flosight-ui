@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('insight.status')
+angular.module('flosight.status')
   .factory('Status',
     function($resource, Api) {
       return $resource(Api.apiPrefix + '/status', {

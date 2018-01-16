@@ -6,21 +6,21 @@ var fs = require('fs');
 var exec = require('child_process').exec;
 var pkg = require('../package.json');
 
-var InsightUI = function(options) {
+var FlosightUI = function(options) {
   BaseService.call(this, options);
   this.apiPrefix = options.apiPrefix || 'api';
   this.routePrefix = options.routePrefix || '';
 };
 
-InsightUI.dependencies = ['insight-api'];
+FlosightUI.dependencies = ['flosight-api'];
 
-inherits(InsightUI, BaseService);
+inherits(FlosightUI, BaseService);
 
-InsightUI.prototype.start = function(callback) {
+FlosightUI.prototype.start = function(callback) {
 
   var self = this;
-  pkg.insightConfig.apiPrefix = self.apiPrefix;
-  pkg.insightConfig.routePrefix = self.routePrefix;
+  pkg.flosightConfig.apiPrefix = self.apiPrefix;
+  pkg.flosightConfig.routePrefix = self.routePrefix;
 
   fs.writeFileSync(__dirname + '/../package.json', JSON.stringify(pkg, null, 2));
   exec('cd ' + __dirname + '/../;' +
@@ -34,11 +34,11 @@ InsightUI.prototype.start = function(callback) {
 
 };
 
-InsightUI.prototype.getRoutePrefix = function() {
+FlosightUI.prototype.getRoutePrefix = function() {
   return this.routePrefix;
 };
 
-InsightUI.prototype.setupRoutes = function(app, express) {
+FlosightUI.prototype.setupRoutes = function(app, express) {
   var self = this;
   app.use(express.static(__dirname + '/../public'));
   // if not in found, fall back to indexFile (404 is handled client-side)
@@ -48,7 +48,7 @@ InsightUI.prototype.setupRoutes = function(app, express) {
   });
 };
 
-InsightUI.prototype.filterIndexHTML = function(data) {
+FlosightUI.prototype.filterIndexHTML = function(data) {
   var transformed = data;
   if (this.routePrefix !== '') {
     transformed = transformed.replace('<base href="/"', '<base href="/' + this.routePrefix + '/"');
@@ -56,4 +56,4 @@ InsightUI.prototype.filterIndexHTML = function(data) {
   return transformed;
 };
 
-module.exports = InsightUI;
+module.exports = FlosightUI;

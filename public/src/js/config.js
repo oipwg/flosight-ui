@@ -1,11 +1,11 @@
 'use strict';
 
 //Setting up route
-angular.module('insight').config(function($routeProvider) {
+angular.module('flosight').config(function($routeProvider) {
   $routeProvider.
     when('/block/:blockHash', {
       templateUrl: 'views/block.html',
-      title: 'Bitcoin Block '
+      title: 'Florincoin Block '
     }).
     when('/block-index/:blockHeight', {
       controller: 'BlocksController',
@@ -17,7 +17,7 @@ angular.module('insight').config(function($routeProvider) {
     }).
     when('/tx/:txId/:v_type?/:v_index?', {
       templateUrl: 'views/transaction.html',
-      title: 'Bitcoin Transaction '
+      title: 'Florincoin Transaction '
     }).
     when('/', {
       templateUrl: 'views/index.html',
@@ -25,15 +25,15 @@ angular.module('insight').config(function($routeProvider) {
     }).
     when('/blocks', {
       templateUrl: 'views/block_list.html',
-      title: 'Bitcoin Blocks solved Today'
+      title: 'Florincoin Blocks solved Today'
     }).
     when('/blocks-date/:blockDate/:startTimestamp?', {
       templateUrl: 'views/block_list.html',
-      title: 'Bitcoin Blocks solved '
+      title: 'Florincoin Blocks solved '
     }).
     when('/address/:addrStr', {
       templateUrl: 'views/address.html',
-      title: 'Bitcoin Address '
+      title: 'Florincoin Address '
     }).
     when('/status', {
       templateUrl: 'views/status.html',
@@ -50,7 +50,7 @@ angular.module('insight').config(function($routeProvider) {
 });
 
 //Setting HTML5 Location Mode
-angular.module('insight')
+angular.module('flosight')
   .config(function($locationProvider) {
     $locationProvider.html5Mode(true);
     $locationProvider.hashPrefix('!');

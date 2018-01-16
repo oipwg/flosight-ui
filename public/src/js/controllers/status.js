@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('insight.status').controller('StatusController',
+angular.module('flosight.status').controller('StatusController',
   function($scope, $routeParams, $location, Global, Status, Sync, getSocket) {
     $scope.global = Global;
 

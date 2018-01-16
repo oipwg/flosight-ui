@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('insight.address').factory('Address',
+angular.module('flosight.address').factory('Address',
   function($resource, Api) {
   return $resource(Api.apiPrefix + '/addr/:addrStr/?noTxList=1', {
     addrStr: '@addStr'

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('insight.api')
+angular.module('flosight.api')
   .factory('Api',
     function() {
       return {

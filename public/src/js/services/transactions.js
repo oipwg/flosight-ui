@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('insight.transactions')
+angular.module('flosight.transactions')
   .factory('Transaction',
     function($resource, Api) {
     return $resource(Api.apiPrefix + '/tx/:txId', {

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('insight.system').controller('FooterController',
+angular.module('flosight.system').controller('FooterController',
   function($scope, $route, $templateCache, gettextCatalog, amMoment,  Version) {
 
     $scope.defaultLanguage = defaultLanguage;
@@ -31,7 +31,7 @@ angular.module('insight.system').controller('FooterController',
     $scope.setLanguage = function(isoCode) {
       gettextCatalog.currentLanguage = $scope.defaultLanguage = defaultLanguage = isoCode;
       amMoment.changeLocale(isoCode);
-      localStorage.setItem('insight-language', isoCode);
+      localStorage.setItem('flosight-language', isoCode);
       var currentPageTemplate = $route.current.templateUrl;
       $templateCache.remove(currentPageTemplate);
       $route.reload();

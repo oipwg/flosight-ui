@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('insight.currency').factory('Currency',
+angular.module('flosight.currency').factory('Currency',
   function($resource, Api) {
     return $resource(Api.apiPrefix + '/currency');
 });

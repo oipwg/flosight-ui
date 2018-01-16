@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('insight.search').controller('SearchController',
+angular.module('flosight.search').controller('SearchController',
   function($scope, $routeParams, $location, $timeout, Global, Block, Transaction, Address, BlockByHeight) {
   $scope.global = Global;
   $scope.loading = false;

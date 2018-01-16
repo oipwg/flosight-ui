@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('insight.blocks').controller('BlocksController',
+angular.module('flosight.blocks').controller('BlocksController',
   function($scope, $rootScope, $routeParams, $location, Global, Block, Blocks, BlockByHeight) {
   $scope.global = Global;
   $scope.loading = false;

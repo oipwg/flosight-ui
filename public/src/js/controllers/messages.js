@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('insight.messages').controller('VerifyMessageController',
+angular.module('flosight.messages').controller('VerifyMessageController',
   function($scope, $http, Api) {
   $scope.message = {
     address: '',

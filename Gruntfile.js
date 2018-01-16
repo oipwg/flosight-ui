@@ -1,6 +1,6 @@
 'use strict';
 
-// var config = require('insight-config.json');
+// var config = require('flosight-config.json');
 
 module.exports = function(grunt) {
 
@@ -23,7 +23,7 @@ module.exports = function(grunt) {
           patterns: [
             {
               match: 'INSIGHT_API_PREFIX',
-              replacement: '<%= pkg.insightConfig.apiPrefix %>'
+              replacement: '<%= pkg.flosightConfig.apiPrefix %>'
             }
           ],
           usePrefix: false
@@ -123,7 +123,7 @@ module.exports = function(grunt) {
     nggettext_compile: {
       all: {
         options: {
-          module: 'insight'
+          module: 'flosight'
         },
         files: {
           'public/src/js/translations.js': ['po/*.po']

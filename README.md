@@ -1,29 +1,29 @@
-# Insight UI
+# Flosight UI
 
-A Bitcoin blockchain explorer web application service for [Bitcore Node](https://github.com/bitpay/bitcore-node) using the [Insight API](https://github.com/bitpay/insight-api).
+A Florincoin blockchain explorer web application service for [Flocore Node](https://github.com/bitpay/flocore-node) using the [Flosight API](https://github.com/bitpay/flosight-api).
 
 ## Quick Start
 
-Please see the guide at [https://bitcore.io/guides/full-node](https://bitcore.io/guides/full-node) for information about getting a block explorer running. This is only the front-end component of the block explorer, and is packaged together with all of the necessary components in [Bitcore](https://github.com/bitpay/bitcore).
+Please see the guide at [https://flocore.io/guides/full-node](https://flocore.io/guides/full-node) for information about getting a block explorer running. This is only the front-end component of the block explorer, and is packaged together with all of the necessary components in [Flocore](https://github.com/bitpay/flocore).
 
 ## Getting Started
 
 To manually install all of the necessary components, you can run these commands:
 
 ```bash
-npm install -g bitcore-node
-bitcore-node create mynode
+npm install -g flocore-node
+flocore-node create mynode
 cd mynode
-bitcore-node install insight-api
-bitcore-node install insight-ui
-bitcore-node start
+flocore-node install flosight-api
+flocore-node install flosight-ui
+flocore-node start
 ```
 
-Open a web browser to `http://localhost:3001/insight/`
+Open a web browser to `http://localhost:3001/flosight/`
 
 ## Development
 
-To build Insight UI locally:
+To build Flosight UI locally:
 
 ```
 $ npm run build
@@ -37,25 +37,25 @@ $ npm run watch
 
 ## Changing routePrefix and apiPrefix
 
-By default, the `insightConfig` in `package.json` is:
+By default, the `flosightConfig` in `package.json` is:
 
 ```json
-  "insightConfig": {
-    "apiPrefix": "insight-api",
-    "routePrefix": "insight"
+  "flosightConfig": {
+    "apiPrefix": "flosight-api",
+    "routePrefix": "flosight"
   }
 ```
 
 To change these routes, first make your changes to `package.json`, for example:
 
 ```json
-  "insightConfig": {
+  "flosightConfig": {
     "apiPrefix": "api",
     "routePrefix": ""
   }
 ```
 
-Then rebuild the `insight-ui` service:
+Then rebuild the `flosight-ui` service:
 
 ```
 $ npm run build
@@ -63,7 +63,7 @@ $ npm run build
 
 ## Multilanguage support
 
-Insight UI uses [angular-gettext](http://angular-gettext.rocketeer.be) for multilanguage support.
+Flosight UI uses [angular-gettext](http://angular-gettext.rocketeer.be) for multilanguage support.
 
 To enable a text to be translated, add the ***translate*** directive to html tags. See more details [here](http://angular-gettext.rocketeer.be/dev-guide/annotate/). Then, run:
 
@@ -88,11 +88,11 @@ compile***.
 
 ## Note
 
-For more details about the [Insight API](https://github.com/bitpay/insight-api) configuration and end-points, go to [Insight API GitHub repository](https://github.com/bitpay/insight-api).
+For more details about the [Flosight API](https://github.com/bitpay/flosight-api) configuration and end-points, go to [Flosight API GitHub repository](https://github.com/bitpay/flosight-api).
 
 ## Contribute
 
-Contributions and suggestions are welcomed at the [Insight UI GitHub repository](https://github.com/bitpay/insight-ui).
+Contributions and suggestions are welcomed at the [Flosight UI GitHub repository](https://github.com/bitpay/flosight-ui).
 
 
 ## License

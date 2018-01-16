@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('insight.system').controller('ScannerController',
+angular.module('flosight.system').controller('ScannerController',
   function($scope, $rootScope, $modalInstance, Global) {
     $scope.global = Global;
 
@@ -112,7 +112,7 @@ angular.module('insight.system').controller('ScannerController',
     qrcode.callback = function(data) {
       _scanStop();
 
-      var str = (data.indexOf('bitcoin:') === 0) ? data.substring(8) : data; 
+      var str = (data.indexOf('florincoin:') === 0) ? data.substring(8) : data; 
       console.log('QR code detected: ' + str);
       $searchInput
         .val(str)

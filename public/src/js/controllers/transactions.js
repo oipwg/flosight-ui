@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('insight.transactions').controller('transactionsController',
+angular.module('flosight.transactions').controller('transactionsController',
 function($scope, $rootScope, $routeParams, $location, Global, Transaction, TransactionsByBlock, TransactionsByAddress) {
   $scope.global = Global;
   $scope.loading = false;
@@ -174,7 +174,7 @@ function($scope, $rootScope, $routeParams, $location, Global, Transaction, Trans
 
 });
 
-angular.module('insight.transactions').controller('SendRawTransactionController',
+angular.module('flosight.transactions').controller('SendRawTransactionController',
   function($scope, $http, Api) {
   $scope.transaction = '';
   $scope.status = 'ready';  // ready|loading|sent|error

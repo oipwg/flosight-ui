@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('insight.address').controller('AddressController',
+angular.module('flosight.address').controller('AddressController',
   function($scope, $rootScope, $routeParams, $location, Global, Address, getSocket) {
     $scope.global = Global;
 
@@ -8,7 +8,7 @@ angular.module('insight.address').controller('AddressController',
     var addrStr = $routeParams.addrStr;
 
     var _startSocket = function() {
-      socket.on('bitcoind/addresstxid', function(data) {
+      socket.on('florincoind/addresstxid', function(data) {
         if (data.address === addrStr) {
           $rootScope.$broadcast('tx', data.txid);
           var base = document.querySelector('base');
@@ -16,11 +16,11 @@ angular.module('insight.address').controller('AddressController',
           beep.play();
         }
       });
-      socket.emit('subscribe', 'bitcoind/addresstxid', [addrStr]);
+      socket.emit('subscribe', 'florincoind/addresstxid', [addrStr]);
     };
 
     var _stopSocket = function () {
-      socket.emit('unsubscribe', 'bitcoind/addresstxid', [addrStr]);
+      socket.emit('unsubscribe', 'florincoind/addresstxid', [addrStr]);
     };
 
     socket.on('connect', function() {

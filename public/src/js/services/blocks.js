@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('insight.blocks')
+angular.module('flosight.blocks')
   .factory('Block',
     function($resource, Api) {
     return $resource(Api.apiPrefix + '/block/:blockHash', {

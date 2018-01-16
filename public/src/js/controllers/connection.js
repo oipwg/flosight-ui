@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('insight.connection').controller('ConnectionController',
+angular.module('flosight.connection').controller('ConnectionController',
   function($scope, $window, Status, getSocket, PeerSync) {
 
     // Set initial values
