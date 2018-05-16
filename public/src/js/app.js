@@ -1,7 +1,7 @@
 'use strict';
 
 var defaultLanguage = localStorage.getItem('flosight-language') || 'en';
-var defaultCurrency = localStorage.getItem('flosight-currency') || 'BTC';
+var defaultCurrency = localStorage.getItem('flosight-currency') || 'FLO';
 
 angular.module('flosight',[
   'ngAnimate',
