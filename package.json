@@ -1,7 +1,7 @@
 {
   "name": "flosight-ui",
   "description": "An open-source frontend for the Flosight API. The Flosight API provides you with a convenient, powerful and simple way to query and broadcast data on the florincoin network and build your own services with it.",
-  "version": "5.0.0-beta.54",
+  "version": "5.0.0-beta.55",
   "repository": "git://github.com/bitpay/flosight-ui.git",
   "bugs": {
     "url": "https://github.com/bitpay/flosight-ui/issues"
@@ -23,6 +23,7 @@
   },
   "scripts": {
     "build": "bower install && grunt compile",
+    "prepublishOnly": "npm run build",
     "watch": "grunt",
     "install-and-build": "npm install && npm run build",
     "test": "mocha test"
