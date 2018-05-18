@@ -209,3 +209,12 @@
     <span class="txvalues txvalues-primary">{{$root.currency.getConvertion(tx.valueOut) || tx.valueOut + ' BTC' }}</span>
   </div>
 </div>
+<div class="line-top row">
+  <div class="col-12 container">
+    <div class="well well-sm">
+      <strong>floData</strong> 
+      <span class="text-muted ng-binding">{tx.floData}</span>
+      <span class="btn-copy" clip-copy="tx.floData"></span>
+    </div>
+  </div>
+</div>
