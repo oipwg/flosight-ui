@@ -44,6 +44,7 @@
             <tr>
               <th>Hash</th>
               <th class="text-right" translate>Value Out</th>
+              <th class="text-right" translate>floData</th>
             </tr>
           </thead>
           <tbody>
@@ -53,6 +54,7 @@
               <a class="ellipsis" href="tx/{{tx.txid}}">{{tx.txid}}</a>
             </td>
             <td class="text-right"><span class="ellipsis">{{$root.currency.getConvertion(tx.valueOut) || tx.valueOut + ' BTC'}}</span></td>
+            <td class="text-right"><span class="ellipsis">{{tx.floData}}</span></td>
           </tr>
           </tbody>
         </table>
