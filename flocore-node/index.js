@@ -22,15 +22,17 @@ FlosightUI.prototype.start = function(callback) {
   pkg.flosightConfig.apiPrefix = self.apiPrefix;
   pkg.flosightConfig.routePrefix = self.routePrefix;
 
-  fs.writeFileSync(__dirname + '/../package.json', JSON.stringify(pkg, null, 2));
-  exec('cd ' + __dirname + '/../;' +
-    ' npm run install-and-build', function(err) {
-    if (err) {
-      return callback(err);
-    }
-    self.indexFile = self.filterIndexHTML(fs.readFileSync(__dirname + '/../public/index-template.html', {encoding: 'utf8'}));
-    callback();
-  });
+  // fs.writeFileSync(__dirname + '/../package.json', JSON.stringify(pkg, null, 2));
+  // exec('cd ' + __dirname + '/../;' +
+  //   ' npm run install-and-build', function(err) {
+  //   if (err) {
+  //     return callback(err);
+  //   }
+  //   self.indexFile = self.filterIndexHTML(fs.readFileSync(__dirname + '/../public/index-template.html', {encoding: 'utf8'}));
+  //   callback();
+  // });
+  self.indexFile = self.filterIndexHTML(fs.readFileSync(__dirname + '/../public/index-template.html', {encoding: 'utf8'}));
+  callback();
 
 };
 
