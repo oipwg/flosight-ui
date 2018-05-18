@@ -7,12 +7,25 @@ angular.module('flosight.system').controller('IndexController',
   function($scope, Global, getSocket, Blocks) {
     $scope.global = Global;
 
-    var _getBlocks = function() {
+    var _getBlocks = function(loadTxs) {
       Blocks.get({
         limit: BLOCKS_DISPLAYED
       }, function(res) {
         $scope.blocks = res.blocks;
         $scope.blocksLength = res.length;
+
+        if (loadTxs) {
+          TransactionsByBlock.get({
+            block: res.blocks[0].hash
+          }, function(txs){
+            for (var i = txs.length; i > 0; i--){
+              $scope.txs.unshift(txs[i]);
+              if (parseInt($scope.txs.length, 10) >= parseInt(TRANSACTION_DISPLAYED, 10)) {
+                $scope.txs = $scope.txs.splice(0, TRANSACTION_DISPLAYED);
+              }
+            }
+          })
+        }
       });
     };
 
@@ -28,7 +41,7 @@ angular.module('flosight.system').controller('IndexController',
       });
 
       socket.on('block', function() {
-        _getBlocks();
+        _getBlocks(false);
       });
     };
 
@@ -44,7 +57,7 @@ angular.module('flosight.system').controller('IndexController',
     };
 
     $scope.index = function() {
-      _getBlocks();
+      _getBlocks(true);
       _startSocket();
     };
 
