@@ -4,7 +4,7 @@ var TRANSACTION_DISPLAYED = 10;
 var BLOCKS_DISPLAYED = 5;
 
 angular.module('flosight.system').controller('IndexController',
-  function($scope, Global, getSocket, Blocks, Status) {
+  function($scope, Global, getSocket, Blocks) {
     $scope.global = Global;
 
     var _getBlocks = function(loadTxs) {
@@ -49,19 +49,6 @@ angular.module('flosight.system').controller('IndexController',
       _startSocket();
     });
 
-   var _getStatus = function(q) {
-      Status.get({
-          q: 'get' + q
-        },
-        function(d) {
-          $scope.loaded = 1;
-          angular.extend($scope, d);
-        },
-        function(e) {
-          $scope.error = 'API ERROR: ' + e.data;
-        });
-    };
-
     $scope.humanSince = function(time) {
       var m = moment.unix(time);
       return m.max().fromNow();
@@ -70,7 +57,6 @@ angular.module('flosight.system').controller('IndexController',
     $scope.index = function() {
       _getBlocks(true);
       _startSocket();
-      _getStatus('Info');
     };
 
     $scope.txs = [];

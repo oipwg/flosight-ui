@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="flosight navbar-brand" href=".">flosight</a>
+      <a class="flosight navbar-brand" href="." data-ng-init="getStatus('Info')">flosight <sub data-ng-hide="info.network === 'mainnet'" style="font-size: 35%">({{info.network}})</sub></a>
     </div>
     <div class="navbar-collapse collapse" collapse="$root.isCollapsed">
       <ul class="nav navbar-nav">
