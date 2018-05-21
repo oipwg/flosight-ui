@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('flosight.system').controller('HeaderController',
-  function($scope, $rootScope, $modal, getSocket, Global, Block) {
+  function($scope, $rootScope, $modal, getSocket, Global, Block, Status) {
     $scope.global = Global;
 
     $rootScope.currency = {
@@ -23,6 +23,19 @@ angular.module('flosight.system').controller('HeaderController',
         templateUrl: 'scannerModal.html',
         controller: 'ScannerController'
       });
+    };
+
+    $scope.getStatus = function(q) {
+      Status.get({
+          q: 'get' + q
+        },
+        function(d) {
+          $scope.loaded = 1;
+          angular.extend($scope, d);
+        },
+        function(e) {
+          $scope.error = 'API ERROR: ' + e.data;
+        });
     };
 
     var _getBlock = function(hash) {
