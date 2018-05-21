@@ -112,7 +112,7 @@ angular.module('flosight.system').controller('ScannerController',
     qrcode.callback = function(data) {
       _scanStop();
 
-      var str = (data.indexOf('florincoin:') === 0) ? data.substring(8) : data; 
+      var str = (data.indexOf('flo:') === 0) ? data.substring(8) : data; 
       console.log('QR code detected: ' + str);
       $searchInput
         .val(str)
