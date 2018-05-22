@@ -19,7 +19,20 @@ angular.module('flosight.currency').controller('CurrencyController',
         var response;
 
         if (this.symbol === 'USD') {
-          response = _roundFloat((value * this.factor), 2);
+          var USDValue = value * this.factor;
+          response = USDValue.toFixed(2)
+
+          if (parseFloat(response) === 0)
+            response = USDValue.toFixed(4)
+
+          if (parseFloat(response) === 0)
+            response = USDValue.toFixed(6)
+
+          if (parseFloat(response) === 0)
+            response = USDValue.toFixed(8)
+
+          if (parseFloat(response) === 0)
+            response = 0;
         } else if (this.symbol === 'mFLO') {
           this.factor = 1000;
           response = _roundFloat((value * this.factor), 5);
