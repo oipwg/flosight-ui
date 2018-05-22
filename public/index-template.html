@@ -71,5 +71,23 @@
 	<script src="js/angularjs-all.min.js"></script>
   <script src="js/clipboard.min.js"></script>
 	<script src="js/main.min.js"></script>
+  <script>
+    var observer = new MutationObserver(function(mutations, observer) {
+      console.log("DOM Mutated");
+      var btns = document.querySelectorAll('.btn-copy');
+      var clipboard = new ClipboardJS(btns);
+      clipboard.on('success', function(e) {
+          console.log(e);
+      });
+      clipboard.on('error', function(e) {
+          console.log(e);
+      });
+    });
+
+    observer.observe(document, {
+      subtree: true,
+      attributes: true
+    })
+  </script>
 </body>
 </html>
