@@ -5,7 +5,7 @@
         <span class="glyphicon glyphicon-plus-sign" data-ng-class="{'glyphicon-minus-sign': itemsExpanded}"></span>
       </a>
       <a href="tx/{{tx.txid}}">{{tx.txid}}</a>
-      <span class="btn-copy" clip-copy="tx.txid"></span>
+      <span class="btn-copy" data-clipboard-text="tx.txid"></span>
     </div>
   </div>
   <div class="col-xs-5 col-md-4 text-right text-muted">
@@ -95,7 +95,7 @@
             <p><strong>scriptSig</strong></p>
               <div data-ng-repeat="item in vin.scriptSig.asm | split:' '" class="">
                 <p class="col-md-11 ellipsis text-muted">{{item}}</p>
-                <p class="btn-copy" clip-copy="item"></p>
+                <p class="btn-copy" data-clipboard-text="item"></p>
               </div>
           </div>
         </div>
@@ -175,7 +175,7 @@
               <div class="small">
                 <p><strong>scriptPubKey</strong></p>
                 <span class="col-md-11 text-muted ellipsis">{{vout.scriptPubKey.asm}}</span>
-                <span class="btn-copy col-md-1" clip-copy="vout.scriptPubKey.asm"></span>
+                <span class="btn-copy col-md-1" data-clipboard-text="vout.scriptPubKey.asm"></span>
               </div>
           </div>
         </div>
@@ -194,7 +194,7 @@
 
 <div class="well well-sm bgwhite ellipsis" data-ng-if="itemsExpanded && !block.hash && tx.blockhash">
   <strong translate>Included in Block</strong> <a class="text-muted" href="block/{{tx.blockhash}}">{{tx.blockhash}}</a>
-  <span class="btn-copy" clip-copy="tx.blockhash"></span>
+  <span class="btn-copy" data-clipboard-text="tx.blockhash"></span>
 </div>
 
 <div class="line-top row" data-ng-hide="!tx">
@@ -214,7 +214,7 @@
     <div class="well well-sm" style="margin: 0px 10px">
       <strong>floData: </strong> 
       <span class="text-muted ng-binding" style="word-break: break-all">{{tx.floData}}</span>
-      <span class="btn-copy" clip-copy="tx.floData"></span>
+      <span class="btn-copy" data-clipboard-text="tx.floData"></span>
     </div>
   </div>
 </div>
