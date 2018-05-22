@@ -46,7 +46,7 @@ angular.module('flosight')
       scope: { dataClipboardText: '=dataClipboardText' },
       template: '<div class="tooltip fade right in"><div class="tooltip-arrow"></div><div class="tooltip-inner">Copied!</div></div>',
       link: function(scope, elm) {
-        var clip = new ClipboardJS('.btn-copy', {
+        var clip = new ClipboardJS(elm, {
           text: scope.dataClipboardText
         });
 
