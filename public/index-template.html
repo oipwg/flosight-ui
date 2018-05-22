@@ -72,16 +72,8 @@
   <script src="js/clipboard.min.js"></script>
 	<script src="js/main.min.js"></script>
   <script>
-    var observer = new MutationObserver(function(mutations, observer) {
-      console.log("DOM Mutated");
-      var btns = document.querySelectorAll('.btn-copy');
-      var clipboard = new ClipboardJS(btns);
-      clipboard.on('success', function(e) {
-          console.log(e);
-      });
-      clipboard.on('error', function(e) {
-          console.log(e);
-      });
+    var observer = new window.MutationObserver(function(mutations, observer) {
+      var clipboard = new ClipboardJS('.btn-copy');
     });
 
     observer.observe(document, {
