@@ -21,18 +21,18 @@ msgstr "404 ページがみつかりません (´・ω・`)"
 
 #: public/views/index.html
 msgid ""
-"<strong>flosight</strong>  is an <a href=\"http://flocha.in/\" target="
+"<strong>flosight</strong>  is an <a href=\"https://github.com/floblockchain\" target="
 "\"_blank\">open-source Flo blockchain explorer</a> with complete REST "
 "and websocket APIs that can be used for writing web wallets and other apps  "
 "that need more advanced blockchain queries than provided by flod RPC.  "
-"Check out the <a href=\"https://github.com/bitpay/flosight-api\" target=\"_blank"
+"Check out the <a href=\"https://github.com/oipwg/flocore-node\" target=\"_blank"
 "\">source code</a>."
 msgstr ""
 "<strong>flosight</strong>は、flod RPCの提供するものよりも詳細なブロック"
 "チェインへの問い合わせを必要とするウェブウォレットやその他のアプリを書くのに"
 "使える、完全なRESTおよびwebsocket APIを備えた<a href=\"http://flocha.in"
 "/\" target=\"_blank\">オープンソースのビットコインブロックエクスプローラ</"
-"a>です。<a href=\"https://github.com/bitpay/flosight-api\" target=\"_blank\">ソース"
+"a>です。<a href=\"https://github.com/oipwg/flocore-node\" target=\"_blank\">ソース"
 "コード</a>を確認"
 
 #: public/views/index.html
