@@ -39,7 +39,7 @@ angular.module('flosight.currency').controller('CurrencyController',
         } else if (this.symbol === 'bits') {
           this.factor = 1000000;
           response = _roundFloat((value * this.factor), 2);
-        } else { // assumes symbol is BTC
+        } else { // assumes symbol is FLO
           this.factor = 1;
           response = _roundFloat((value * this.factor), 8);
         }

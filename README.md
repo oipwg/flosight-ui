@@ -1,10 +1,10 @@
 # Flosight UI
 
-A Florincoin blockchain explorer web application service for [Flocore Node](https://github.com/bitpay/flocore-node) using the [Flosight API](https://github.com/bitpay/flosight-api).
+A Florincoin blockchain explorer web application service for [Flocore Node](https://github.com/oipwg/flocore-node) using the [Flosight API](https://github.com/oipwg/flosight-api).
 
 ## Quick Start
 
-Please see the guide at [https://flocore.io/guides/full-node](https://flocore.io/guides/full-node) for information about getting a block explorer running. This is only the front-end component of the block explorer, and is packaged together with all of the necessary components in [Flocore](https://github.com/bitpay/flocore).
+Please see the guide at [https://bitcore.io/guides/full-node](https://bitcore.io/guides/full-node) for information about getting a block explorer running. This is only the front-end component of the block explorer, and is packaged together with all of the necessary components in [Flocore](https://github.com/oipwg/flocore-node).
 
 ## Getting Started
 

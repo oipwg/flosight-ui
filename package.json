@@ -1,7 +1,7 @@
 {
   "name": "flosight-ui",
   "description": "An open-source frontend for the Flosight API. The Flosight API provides you with a convenient, powerful and simple way to query and broadcast data on the florincoin network and build your own services with it.",
-  "version": "5.0.0-beta.72",
+  "version": "5.2.0",
   "repository": "git://github.com/bitpay/flosight-ui.git",
   "bugs": {
     "url": "https://github.com/bitpay/flosight-ui/issues"
@@ -22,18 +22,35 @@
     "routePrefix": ""
   },
   "scripts": {
-    "build": "bower install && grunt compile",
+    "build": "grunt compile",
     "prepublishOnly": "npm run build",
     "watch": "grunt",
     "install-and-build": "npm install && npm run build",
-    "test": "mocha test"
+    "test": "mocha test",
+    "postinstall": "node -e \"try { require('fs').symlinkSync(require('path').resolve('node_modules/@bower_components'), 'public/lib', 'junction') } catch (e) { }\""
   },
-  "dependencies": {},
+  "dependencies": {
+    "@bower_components/angular": "angular/bower-angular#~1.2.13",
+    "@bower_components/angular-animate": "angular/bower-angular-animate#~1.2.13",
+    "@bower_components/angular-bootstrap": "angular-ui/bootstrap-bower#~0.10.0",
+    "@bower_components/angular-gettext": "rubenv/angular-gettext#~1.1.0",
+    "@bower_components/angular-moment": "urish/angular-moment#~0.8.0",
+    "@bower_components/angular-resource": "angular/bower-angular-resource#~1.2.13",
+    "@bower_components/angular-route": "angular/bower-angular-route#~1.2.13",
+    "@bower_components/angular-ui-utils": "angular-ui/ui-utils#~0.1.1",
+    "@bower_components/bootstrap": "twbs/bootstrap#~3.1.1",
+    "@bower_components/jquery": "jquery/jquery-dist#>= 1.9.0",
+    "@bower_components/moment": "moment/moment#>=2.0.0 <2.9.0",
+    "@bower_components/momentjs": "moment/moment#~2.5.1",
+    "@bower_components/ngprogress": "VictorBjelkholm/ngProgress#~1.0.4",
+    "@bower_components/zeroclipboard": "lisposter/angular-zeroclipboard#~0.3.2"
+  },
   "devDependencies": {
-    "mocha": "^2.4.5",
     "bower": "~1.8.0",
+    "browser-sync": "^3.0.2",
     "grunt": "~0.4.2",
     "grunt-angular-gettext": "^0.2.15",
+    "grunt-browser-sync": "^2.2.0",
     "grunt-cli": "~0.1.11",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-jshint": "~0.8.0",
@@ -42,6 +59,10 @@
     "grunt-css": "~0.5.4",
     "grunt-macreload": "*",
     "grunt-markdown": "~0.5.0",
-    "grunt-replace": "^1.0.1"
+    "grunt-replace": "^1.0.1",
+    "mocha": "^2.4.5"
+  },
+  "engines": {
+    "yarn": ">= 1.0.0"
   }
 }

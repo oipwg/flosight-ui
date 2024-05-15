@@ -10,7 +10,6 @@ angular.module('flosight',[
   'ngProgress',
   'ui.bootstrap',
   'ui.route',
-  'monospaced.qrcode',
   'gettext',
   'angularMoment',
   'flosight.system',

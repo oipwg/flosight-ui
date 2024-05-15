@@ -53,7 +53,7 @@
             <td>
               <a class="ellipsis" href="tx/{{tx.txid}}">{{tx.txid}}</a>
             </td>
-            <td class="text-right"><span class="ellipsis">{{$root.currency.getConvertion(tx.valueOut) || tx.valueOut + ' BTC'}}</span></td>
+            <td class="text-right"><span class="ellipsis">{{$root.currency.getConvertion(tx.valueOut) || tx.valueOut + ' FLO'}}</span></td>
             <td class="text-right"><span class="ellipsis">{{tx.floData}}</span></td>
           </tr>
           </tbody>
@@ -63,17 +63,23 @@
 
       <div class="col-xs-12 col-md-4 col-gray">
         <h2 translate>About</h2>
-        <p translate><strong>flosight</strong>  is an <a href="https://flocha.in/"
-          target="_blank">open-source Flo blockchain explorer</a> with complete REST and websocket APIs that can be used for writing web wallets and other apps  that need more advanced blockchain queries than provided by flod RPC.  Check out the <a href="https://github.com/oipwg/flosight-ui" target="_blank">source code</a>.</p>
-        <p translate><strong>flosight</strong> is still in development, so be sure to report any bugs and provide feedback for improvement at our <a href="https://github.com/oipwg/flosight-ui/issues" target="_blank">github issue tracker</a>.</p>
+        <p translate>The <a href="https://github.com/floblockchain/flo" target="_blank"><strong>FLO Blockchain</strong></a> is an Archival Blockchain dedicated to long-term data storage and preservation. It offers a secure and decentralized platform for storing important information like public records, ensuring their integrity and accessibility over time.</p>
+        <p translate>Looking to access the FLO Explorer API? Checkout the <a href="https://github.com/oipwg/flosight-api#api-http-endpoints" target="_blank">API documentation here</a>!</p>
         <div id="powered" class="row">
           <div class="powered-text">
             <small class="text-muted" translate>Powered by</small>
           </div>
-          <a href="http://bitcore.io" target="_blank" class="flocore" title="Bitcore"></a>
-          <a href="http://angularjs.org" target="_blank" class="angularjs" title="AngularJS"></a>
-          <a href="https://code.google.com/p/leveldb/" target="_blank" class="leveldb" title="LevelDB"></a>
-          <a href="http://nodejs.org" target="_blank" class="nodejs" title="NodeJs"></a>
+          <div class="powered-by-image-container">
+            <a href="https://github.com/floblockchain/flo" target="_blank" title="FLO Blockchain">
+              <img src="img/flo.png" alt="FLO Blockchain" />
+            </a>
+            <a href="https://mediciland.com" target="_blank" title="Medici Land Governance">
+              <img src="img/mediciland.png" alt="Medici Land Governance" />
+            </a>
+            <a href="https://github.com/oipwg" target="_blank" title="Open Index Protocol Working Group">
+              <img src="img/oipwg.png" alt="Open Index Protocol Working Group" />
+            </a>
+          </div>
         </div>
       </div> <!-- END OF COL-3 -->
     </div>
