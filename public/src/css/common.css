@@ -154,6 +154,7 @@ margin-left: 0;
   font-style: italic;
   font-weight: 700;
   overflow: hidden;
+  display: flex;
 }
 
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
@@ -584,6 +585,12 @@ margin-left: 0;
 }
 
 /* Index */
+.flo-header {
+  height: 50px;
+  display: flex;
+  margin-top: -15px;
+}
+
 #home .btn-more {
   border-top: 1px solid #ddd;
   margin: 30px auto 0;
@@ -634,10 +641,30 @@ margin-left: 0;
   background-size: 50px;
   width: 20%;
 }
+#powered img.flo {
+  width: 30%;
+}
 #powered a.mediciland {
   background-image: url('../img/mediciland.png');
   background-size: 80px;
   width: 30%;
+}
+#powered a.oipwg {
+  background-image: url('../img/oipwg.jpg');
+  background-size: 50px;
+  width: 30%;
+}
+
+.powered-by-image-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 20px;
+}
+.powered-by-image-container img {
+  max-height: 50px; /* Set a fixed height */
+  width: auto; /* Ensure images maintain their aspect ratio */
+  margin: 0 10px; /* Add some space between images */
 }
 
 @keyframes rotateThis {

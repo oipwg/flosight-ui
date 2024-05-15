@@ -9,12 +9,27 @@ angular.module('flosight.connection').controller('ConnectionController',
     $scope.clienteOnline = true;
 
     var socket = getSocket($scope);
+    var disconnectTimeout;
 
+    // Check for the node server connection
     // Check for the node server connection
     socket.on('connect', function() {
       $scope.serverOnline = true;
+      clearTimeout(disconnectTimeout);
+
       socket.on('disconnect', function() {
-        $scope.serverOnline = false;
+        // Set a timeout to change serverOnline status after 5 seconds
+        disconnectTimeout = setTimeout(function() {
+          $scope.serverOnline = false;
+          $scope.$apply(); // Ensure scope is updated
+        }, 5000);
+      });
+
+      socket.on('reconnect', function() {
+        // Clear the timeout if it reconnects within 5 seconds
+        clearTimeout(disconnectTimeout);
+        $scope.serverOnline = true;
+        $scope.$apply(); // Ensure scope is updated
       });
     });
 
