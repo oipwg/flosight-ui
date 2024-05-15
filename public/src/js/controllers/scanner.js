@@ -32,59 +32,59 @@ angular.module('flosight.system').controller('ScannerController',
     $scope.isMobile = isMobile.any();
     $scope.scannerLoading = false;
 
-    var $searchInput = angular.element(document.getElementById('search')),
-        cameraInput,
-        video,
-        canvas,
-        $video,
-        context,
-        localMediaStream;
+    // var $searchInput = angular.element(document.getElementById('search')),
+    //     cameraInput,
+    //     video,
+    //     canvas,
+    //     $video,
+    //     context,
+    //     localMediaStream;
 
     var _scan = function(evt) {
-      if ($scope.isMobile) {
-        $scope.scannerLoading = true;
-        var files = evt.target.files;
+      // if ($scope.isMobile) {
+      //   $scope.scannerLoading = true;
+      //   var files = evt.target.files;
 
-        if (files.length === 1 && files[0].type.indexOf('image/') === 0) {
-          var file = files[0];
+      //   if (files.length === 1 && files[0].type.indexOf('image/') === 0) {
+      //     var file = files[0];
 
-          var reader = new FileReader();
-          reader.onload = (function(theFile) {
-            return function(e) {
-              var mpImg = new MegaPixImage(file);
-              mpImg.render(canvas, { maxWidth: 200, maxHeight: 200, orientation: 6 });
+      //     var reader = new FileReader();
+      //     reader.onload = (function(theFile) {
+      //       return function(e) {
+      //         var mpImg = new MegaPixImage(file);
+      //         mpImg.render(canvas, { maxWidth: 200, maxHeight: 200, orientation: 6 });
 
-              setTimeout(function() {
-                qrcode.width = canvas.width;
-                qrcode.height = canvas.height;
-                qrcode.imagedata = context.getImageData(0, 0, qrcode.width, qrcode.height);
+      //         setTimeout(function() {
+      //           qrcode.width = canvas.width;
+      //           qrcode.height = canvas.height;
+      //           qrcode.imagedata = context.getImageData(0, 0, qrcode.width, qrcode.height);
 
-                try {
-                  //alert(JSON.stringify(qrcode.process(context)));
-                  qrcode.decode();
-                } catch (e) {
-                  alert(e);
-                }
-              }, 1500);
-            };
-          })(file);
+      //           try {
+      //             //alert(JSON.stringify(qrcode.process(context)));
+      //             qrcode.decode();
+      //           } catch (e) {
+      //             alert(e);
+      //           }
+      //         }, 1500);
+      //       };
+      //     })(file);
 
-          // Read  in the file as a data URL
-          reader.readAsDataURL(file);
-        }
-      } else {
-        if (localMediaStream) {
-          context.drawImage(video, 0, 0, 300, 225);
+      //     // Read  in the file as a data URL
+      //     reader.readAsDataURL(file);
+      //   }
+      // } else {
+      //   if (localMediaStream) {
+      //     context.drawImage(video, 0, 0, 300, 225);
 
-          try {
-            qrcode.decode();
-          } catch(e) {
-            //qrcodeError(e);
-          }
-        }
+      //     try {
+      //       qrcode.decode();
+      //     } catch(e) {
+      //       //qrcodeError(e);
+      //     }
+      //   }
 
-        setTimeout(_scan, 500);
-      }
+      //   setTimeout(_scan, 500);
+      // }
     };
 
     var _successCallback = function(stream) {
@@ -95,13 +95,13 @@ angular.module('flosight.system').controller('ScannerController',
     };
 
     var _scanStop = function() {
-      $scope.scannerLoading = false;
-      $modalInstance.close();
-      if (!$scope.isMobile) {
-        if (localMediaStream.stop) localMediaStream.stop();
-        localMediaStream = null;
-        video.src = '';
-      }
+      // $scope.scannerLoading = false;
+      // $modalInstance.close();
+      // if (!$scope.isMobile) {
+      //   if (localMediaStream.stop) localMediaStream.stop();
+      //   localMediaStream = null;
+      //   video.src = '';
+      // }
     };
 
     var _videoError = function(err) {
@@ -109,16 +109,16 @@ angular.module('flosight.system').controller('ScannerController',
       _scanStop();
     };
 
-    qrcode.callback = function(data) {
-      _scanStop();
+    // qrcode.callback = function(data) {
+    //   _scanStop();
 
-      var str = (data.indexOf('flo:') === 0) ? data.substring(8) : data; 
-      console.log('QR code detected: ' + str);
-      $searchInput
-        .val(str)
-        .triggerHandler('change')
-        .triggerHandler('submit');
-    };
+    //   var str = (data.indexOf('flo:') === 0) ? data.substring(8) : data; 
+    //   console.log('QR code detected: ' + str);
+    //   $searchInput
+    //     .val(str)
+    //     .triggerHandler('change')
+    //     .triggerHandler('submit');
+    // };
 
     $scope.cancel = function() {
       _scanStop();
@@ -128,22 +128,22 @@ angular.module('flosight.system').controller('ScannerController',
       $rootScope.isCollapsed = true;
       
       // Start the scanner
-      setTimeout(function() {
-        canvas = document.getElementById('qr-canvas');
-        context = canvas.getContext('2d');
+      // setTimeout(function() {
+      //   canvas = document.getElementById('qr-canvas');
+      //   context = canvas.getContext('2d');
 
-        if ($scope.isMobile) {
-          cameraInput = document.getElementById('qrcode-camera');
-          cameraInput.addEventListener('change', _scan, false);
-        } else {
-          video = document.getElementById('qrcode-scanner-video');
-          $video = angular.element(video);
-          canvas.width = 300;
-          canvas.height = 225;
-          context.clearRect(0, 0, 300, 225);
+      //   if ($scope.isMobile) {
+      //     cameraInput = document.getElementById('qrcode-camera');
+      //     cameraInput.addEventListener('change', _scan, false);
+      //   } else {
+      //     video = document.getElementById('qrcode-scanner-video');
+      //     $video = angular.element(video);
+      //     canvas.width = 300;
+      //     canvas.height = 225;
+      //     context.clearRect(0, 0, 300, 225);
 
-          navigator.getUserMedia({video: true}, _successCallback, _videoError); 
-        }
-      }, 500);
+      //     navigator.getUserMedia({video: true}, _successCallback, _videoError); 
+      //   }
+      // }, 500);
     });
 });
