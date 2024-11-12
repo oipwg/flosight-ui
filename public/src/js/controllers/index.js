@@ -4,7 +4,7 @@ var TRANSACTION_DISPLAYED = 10;
 var BLOCKS_DISPLAYED = 5;
 
 angular.module('flosight.system').controller('IndexController',
-  function($scope, Global, getSocket, Blocks) {
+  function($scope, Global, getSocket, Blocks, TransactionsByBlock) {
     $scope.global = Global;
 
     var _getBlocks = function(loadTxs) {
